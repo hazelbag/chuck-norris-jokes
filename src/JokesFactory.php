@@ -21,4 +21,9 @@ class JokesFactory
     {
         return $this->jokes[array_rand($this->jokes)];
     }
+
+    public function getRandomJokes($amount = 1)
+    {
+        // [WIP]
+    }
 }
