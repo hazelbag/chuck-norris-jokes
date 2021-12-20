@@ -1,6 +1,8 @@
 <?php
 
-use Jacques\ChuckNorrisJokes\JokesFactory;
+namespace Hazelbag\ChuckNorrisJokes\Tests;
+
+use Hazelbag\ChuckNorrisJokes\JokesFactory;
 use PHPUnit\Framework\TestCase;
 
 class JokesFactoryTest extends TestCase

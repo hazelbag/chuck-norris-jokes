@@ -8,6 +8,11 @@
       "Hazelbag\\ChuckNorrisJokes\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Hazelbag\\ChuckNorrisJokes\\Tests\\": "tests/"
+    }
+  },
   "authors": [
     {
       "name": "hazelbag",
