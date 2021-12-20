@@ -2,6 +2,8 @@
 
 Create chuck norris jokes in your next PHP project.
 
+<img src="https://app.travis-ci.com/hazelbag/chuck-norris-jokes.svg?branch=main&amp;status=created" alt="build:created">
+
 ## Installation
 
 Require the package using composer:
