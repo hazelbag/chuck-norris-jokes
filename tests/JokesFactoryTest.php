@@ -2,6 +2,10 @@
 
 namespace Hazelbag\ChuckNorrisJokes\Tests;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
 use Hazelbag\ChuckNorrisJokes\JokesFactory;
 use PHPUnit\Framework\TestCase;
 
@@ -10,28 +14,18 @@ class JokesFactoryTest extends TestCase
     /** @test */
     public function itReturnsARandomJoke()
     {
-        $jokes = new JokesFactory([
-            'This is a joke',
+        $mock = new MockHandler([
+            new Response(200, [], '{ "type": "success", "value": { "id": 317, "joke": "Chuck Norris was once in a knife fight, and the knife lost.", "categories": [] } }'),
         ]);
 
-        $joke = $jokes->getRandomJoke();
+        $handlerStack = HandlerStack::create($mock);
 
-        $this->assertSame('This is a joke', $joke);
-    }
+        $client = new Client(['handler' => $handlerStack]);
 
-    /** @test */
-    public function itReturnsAPredefinedJoke()
-    {
-        $chuckJokes = [
-            'Chuck Norris\' tears cure cancer. Too bad he has never cried.',
-            'Chuck Norris counted to infinity... Twice.',
-            'If you can see Chuck Norris, he can see you. If you can\'t see Chuck Norris you may be only seconds away from death.',
-        ];
-
-        $jokes = new JokesFactory();
+        $jokes = new JokesFactory($client);
 
         $joke = $jokes->getRandomJoke();
 
-        $this->assertContains($joke, $chuckJokes);
+        $this->assertSame('Chuck Norris was once in a knife fight, and the knife lost.', $joke);
     }
 }
