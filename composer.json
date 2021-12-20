@@ -1,5 +1,5 @@
 {
-  "name": "jacques/chuck-norris-jokes",
+  "name": "hazelbag/chuck-norris-jokes",
   "description": "Random Chuck Jokes Package",
   "type": "library",
   "license": "MIT",
@@ -10,8 +10,8 @@
   },
   "authors": [
     {
-      "name": "Jacques",
-      "email": "jacques.o@outlook.com"
+      "name": "hazelbag",
+      "email": "jacquesmy-web.me"
     }
   ],
   "require": {
