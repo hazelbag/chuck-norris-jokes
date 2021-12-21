@@ -2,10 +2,12 @@
 
 namespace Hazelbag\ChuckNorrisJokes\Http\Controllers;
 
+use Hazelbag\ChuckNorrisJokes\Facades\ChuckNorris;
+
 class ChuckNorrisController
 {
     public function __invoke()
     {
-        return 'joke';
+        return ChuckNorris::getRandomJoke();
     }
 }
