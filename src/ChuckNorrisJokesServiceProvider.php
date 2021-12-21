@@ -3,6 +3,8 @@
 namespace Hazelbag\ChuckNorrisJokes;
 
 use Hazelbag\ChuckNorrisJokes\Console\ChuckNorrisJoke;
+use Hazelbag\ChuckNorrisJokes\Http\Controllers\ChuckNorrisController;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class ChuckNorrisJokesServiceProvider extends ServiceProvider
@@ -14,6 +16,8 @@ class ChuckNorrisJokesServiceProvider extends ServiceProvider
                 ChuckNorrisJoke::class
             ]);
         }
+
+        Route::get('chuck-norris', ChuckNorrisController::class);
     }
 
     public function register()
