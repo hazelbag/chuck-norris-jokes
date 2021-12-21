@@ -33,5 +33,18 @@
       "@putenv XDEBUG_MODE=coverage",
       "phpunit --color=always --coverage-html=html"
     ]
+  },
+  "require-dev": {
+    "orchestra/testbench": "~3.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Hazelbag\\ChuckNorrisJokes\\ChuckNorrisJokesServiceProvider"
+      ],
+      "aliases": {
+        "ChuckNorris": "Hazelbag\\ChuckNorrisJokes\\Facade\\ChuckNorris"
+      }
+    }
   }
 }

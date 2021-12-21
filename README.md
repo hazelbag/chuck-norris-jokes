@@ -15,7 +15,7 @@ composer require hazelbag/chuck-norris-jokes
 ## Usage
 
 ```php
-use Hazelbag\ChuckNorrisJokes\JokesFactory;
+use Hazelbag\ChuckNorrisJokes\Facades\JokesFactory;
 
 $jokes = new JokeFactory();
 
